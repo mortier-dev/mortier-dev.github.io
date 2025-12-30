@@ -35,41 +35,44 @@
       --text:#f9fafb;--muted:#9ca3af;--border:rgba(255,255,255,.08);--success:#4ade80;
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:"Inter",system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+    body{
+      margin:0;font-family:"Inter",system-ui,-apple-system,Segoe UI,Arial,sans-serif;
       background:radial-gradient(120% 100% at 50% -10%,#1f2937 0%,#020617 60%,#000 100%);
-      color:var(--text);line-height:1.6;}
-    header{display:flex;justify-content:space-between;align-items:center;
+      color:var(--text);line-height:1.6;
+    }
+    header{
+      display:flex;justify-content:space-between;align-items:center;
       padding:18px 32px;border-bottom:1px solid var(--border);
       background:rgba(2,6,23,.45);backdrop-filter:blur(10px);
-      position:sticky;top:0;z-index:10;}
+      position:sticky;top:0;z-index:10;
+    }
     .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.15rem}
     .badge{background:rgba(255,255,255,.1);padding:6px 12px;border-radius:999px;font-size:.8rem;color:var(--muted)}
+
     .hero{max-width:1050px;margin:80px auto 60px;padding:0 24px;text-align:center}
     .hero h1{margin:0 0 18px;font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.12}
-    .hero p{color:var(--muted);max-width:760px;margin:0 auto 26px;font-size:1.05rem}
-    .cta{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:22px}
-    input[type=email]{padding:12px 14px;border-radius:10px;border:1px solid var(--border);
-      background:rgba(255,255,255,.04);color:var(--text);width:260px}
-    button{padding:12px 16px;border-radius:10px;border:none;
-      background:linear-gradient(135deg,var(--accent),var(--accent-light));
-      color:white;cursor:pointer;font-weight:600;transition:opacity .18s,transform .18s}
-    button:hover{opacity:.92;transform:translateY(-1px)}
+    .hero p{color:var(--muted);max-width:760px;margin:0 auto 10px;font-size:1.05rem}
+
     section{max-width:1100px;margin:70px auto;padding:0 24px}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:22px}
-    .card{background:var(--card);border:1px solid var(--border);padding:20px 18px 18px;
-      border-radius:16px;box-shadow:0 20px 50px rgba(0,0,0,.35);
-      transition:transform .22s,box-shadow .22s,border-color .22s}
-    .card:hover{transform:translateY(-4px) scale(1.01);border-color:rgba(255,255,255,.22);
-      box-shadow:0 30px 70px rgba(0,0,0,.45)}
+    .card{
+      background:var(--card);border:1px solid var(--border);
+      padding:20px 18px 18px;border-radius:16px;
+      box-shadow:0 20px 50px rgba(0,0,0,.35);
+      transition:transform .22s,box-shadow .22s,border-color .22s;
+    }
+    .card:hover{transform:translateY(-4px) scale(1.01);border-color:rgba(255,255,255,.22);box-shadow:0 30px 70px rgba(0,0,0,.45)}
     .card h3{margin:0 0 10px;font-size:1.05rem}
     .card p{margin:0;color:var(--muted);font-size:.9rem}
+
     .divider{border-top:1px solid var(--border);margin:64px 0 48px}
-    .notice{margin-top:24px;font-size:.9rem;color:var(--muted)}
-    .highlight{background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.35);
-      padding:10px 11px 9px;border-radius:10px;display:inline-block;font-size:.85rem;margin-top:8px;color:#cfe3ff}
+    .highlight{
+      background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.35);
+      padding:10px 11px 9px;border-radius:10px;display:inline-block;
+      font-size:.85rem;margin-top:18px;color:#cfe3ff
+    }
+
     .footer{text-align:center;padding:26px;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem}
-    .pill-success{color:var(--success);background:rgba(74,222,128,.12);
-      border:1px solid rgba(74,222,128,.35);padding:9px 10px 8px;border-radius:12px;display:inline-block;margin-top:8px;font-size:.82rem}
     @media(max-width:550px){header{padding:14px 18px}.hero{margin-top:60px}}
   </style>
 </head>
@@ -84,89 +87,58 @@
     </svg>
     <span>Mortier</span>
   </div>
-  <div class="badge">Early Access — In Development</div>
+  <div class="badge">In Development — Preview</div>
 </header>
 
 <section class="hero">
   <h1>Mortier: File Retention You Can Prove.</h1>
   <p>
-    Automate file retention, archiving, and deletion — with immutable audit logs.
-    Built to support GDPR-friendly workflows without enterprise complexity.
+    Mortier is a GDPR-friendly file retention manager that helps organizations
+    automatically retain, archive, and delete files according to policy —
+    while generating audit-ready records that stand up in reviews and investigations.
   </p>
 
-  <form id="waitlist-form" class="cta" novalidate>
-    <input type="email" id="waitlist-email" placeholder="Join the early-access waitlist" required />
-    <button type="submit">Join Waitlist</button>
-  </form>
-
-  <div id="feedback" class="notice"></div>
-
   <div class="highlight">
-    Mortier will launch on <strong>mortier.dev</strong> — the secure dashboard will live at <strong>dash.mortier.dev</strong>.
+    Mortier will launch soon on <strong>mortier.dev</strong>.  
+    The secure dashboard will live at <strong>dash.mortier.dev</strong>.
   </div>
 </section>
 
 <section>
   <h2>What Mortier will do for you</h2>
+
   <div class="grid">
     <div class="card"><h3>Policy-based retention</h3><p>Automate rules like “archive after 2 years” or “delete after 7 years”.</p></div>
     <div class="card"><h3>Immutable audit logs</h3><p>Evidence of every action — who, when, and why.</p></div>
-    <div class="card"><h3>Legal holds</h3><p>Freeze critical files so policies don’t delete them prematurely.</p></div>
-    <div class="card"><h3>Secure archiving</h3><p>Encrypted, versioned storage with traceability.</p></div>
-    <div class="card"><h3>Location-aware storage</h3><p>Choose regions that align with data-locality expectations.</p></div>
-    <div class="card"><h3>Compliance-first design</h3><p>Built to support GDPR and retention policy workflows.</p></div>
+    <div class="card"><h3>Legal holds</h3><p>Pause deletion instantly for sensitive or disputed records.</p></div>
+    <div class="card"><h3>Secure archiving</h3><p>Encrypted, versioned storage with full traceability.</p></div>
+    <div class="card"><h3>Location-aware storage</h3><p>Choose data regions to support locality expectations under GDPR.</p></div>
+    <div class="card"><h3>Compliance-first design</h3><p>Built specifically around retention and governance workflows.</p></div>
   </div>
 
-  <p class="notice">
-    ⚠️ Mortier is under active development. Features may evolve as we work with early users.
+  <div class="divider"></div>
+
+  <h2>On the roadmap</h2>
+
+  <div class="grid">
+    <div class="card"><h3>API & integrations</h3><p>Connect HR, legal and storage platforms seamlessly.</p></div>
+    <div class="card"><h3>Scheduled compliance reports</h3><p>Automated monthly/quarterly reporting for leadership.</p></div>
+    <div class="card"><h3>Role-based permissions</h3><p>Separate admin, operator, and auditor access securely.</p></div>
+    <div class="card"><h3>Flexible subscription plans</h3><p>Simple tiers based on storage, features, and organizations.</p></div>
+  </div>
+
+  <p class="highlight">
+    ⚠️ Mortier is currently under active development.  
+    Features may evolve — we’re building transparently and with feedback from early users.
   </p>
 </section>
 
 <footer class="footer">
   © <span id="year"></span> Mortier — File Retention & Compliance. All rights reserved.
-  <div class="pill-success">Join early. Influence the roadmap.</div>
 </footer>
 
 <script>
-  const WEBHOOK_URL = "https://discord.com/api/webhooks/1454084396435898428/GjacmKZHMdC0J5vwZW9GNaDpjlu9eGAkVxmirZfWI6lUiajAiz5uxpw7O8EaL3Ja0Xt_";
-
-  const form = document.getElementById("waitlist-form");
-  const emailField = document.getElementById("waitlist-email");
-  const feedback = document.getElementById("feedback");
   document.getElementById("year").textContent = new Date().getFullYear();
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const email = emailField.value.trim();
-    const valid = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email);
-
-    if (!valid) {
-      feedback.style.color = "#f87171";
-      feedback.textContent = "Please enter a valid email address.";
-      return;
-    }
-
-    feedback.style.color = "#9ca3af";
-    feedback.textContent = "Sending…";
-
-    try {
-      await fetch(WEBHOOK_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          content: `📬 **New Mortier waitlist signup**\\nEmail: \`${email}\``
-        })
-      });
-
-      feedback.style.color = "#4ade80";
-      feedback.textContent = "You're on the waitlist — thanks!";
-      emailField.value = "";
-    } catch (err) {
-      feedback.style.color = "#f87171";
-      feedback.textContent = "Something went wrong — please try again.";
-    }
-  });
 </script>
 </body>
 </html>
